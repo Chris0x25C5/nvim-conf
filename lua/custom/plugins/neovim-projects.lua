@@ -25,5 +25,8 @@ return {
 	},
 	lazy = false,
 	priority = 100,
-	keys = { { "<leader>sp", ":NeovimProjectDiscover<CR>", desc = "Project Discovery", mode = "n" } },
+	keys = {
+		{ "<leader>sp", ":NeovimProjectDiscover<CR>", desc = "Project Discovery", mode = "n" },
+		{ "<leader>sP", ":NeovimProjectHistory<CR>", desc = "Project History", mode = "n" },
+	},
 }
