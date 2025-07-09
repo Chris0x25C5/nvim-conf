@@ -1,0 +1,5 @@
+vim.keymap.set("n", "<leader>mr", ":Repl<CR>", { desc = "Open Repl" })
+vim.keymap.set("n", "<leader>mR", ":ReplClose<CR>", { desc = "Close Repl" })
+vim.keymap.set("n", "<leader>mc", "<Plug>(ReplSendCell)", { desc = "Send Repl Cell" })
+vim.keymap.set("n", "<leader>ml", "<Plug>(ReplSendLine)", { desc = "Send Repl Line" })
+vim.keymap.set("x", "<leader>mr", "<Plug>(ReplSendVisual)", { desc = "Send Repl Visual Selection" })
