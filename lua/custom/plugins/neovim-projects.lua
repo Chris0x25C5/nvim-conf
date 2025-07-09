@@ -6,6 +6,10 @@ return {
 			"~/dev/Writing/*",
 			"~/dev/notes/*",
 			"~/AppData/Local/nvim/",
+			"~/.config/nvim/",
+		},
+		patterns = {
+			"^~/dev/Writing/",
 		},
 		picker = {
 			type = "telescope", -- or "fzf-lua"
