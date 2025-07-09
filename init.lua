@@ -232,17 +232,23 @@ end
 -- guifont
 vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h13" }
 
+-- custom keymaps
+-- [V]im command group
+-- command for operation on buffers, and other vim keybind go here
+vim.keymap.set("n", "<leader>vd", ":bdelete<CR>", { desc = "kill current buffer" })
+
+-- [W]indow command group
+-- commands for vim window management
+
+vim.keymap.set("n", "<leader>wb", ":split<CR>", { desc = "Horizontal split" })
+vim.keymap.set("n", "<leader>wv", ":vsplit<CR>", { desc = "Vertical split" })
+
+vim.keymap.set("n", "<leader>wf", ":only<CR>", { desc = "Focus on current window" })
+vim.keymap.set("n", "<leader>wh", "<C-w><C-h>", { desc = "Move focus on the left window" })
+vim.keymap.set("n", "<leader>wj", "<C-w><C-j>", { desc = "Move focus on the lower window" })
+vim.keymap.set("n", "<leader>wk", "<C-w><C-k>", { desc = "Move focus on the upper window" })
+vim.keymap.set("n", "<leader>wl", "<C-w><C-l>", { desc = "Move focus on the right window" })
 -- custom functions
-
-function get_custom_plugins_path()
-	return vim.fs.joinpath(vim.fn.stdpath("config"), "lua", "custom", "plugins")
-end
-
-vim.api.nvim_create_user_command("NewPlugin", function(opts)
-	local plugins = vim.fs.joinpath(vim.fn.stdpath("config"), "lua", "custom", "plugins")
-	local filename = opts.args
-	vim.cmd("edit " .. vim.fn.fnameescape(vim.fs.joinpath(plugins, filename)))
-end, { nargs = 1, desc = "create new plugin file in lua/custom/plugins" })
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -373,6 +379,8 @@ require("lazy").setup({
 				{ "<leader>t", group = "[T]oggle" },
 				{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
 				{ "<leader>m", group = "[M]ode" },
+				{ "<leader>w", group = "[W]indow" },
+				{ "<leader>v", group = "[V]im" },
 			},
 		},
 	},
