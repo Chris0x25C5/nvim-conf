@@ -236,13 +236,14 @@ vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h13" }
 -- [V]im command group
 -- command for operation on buffers, and other vim keybind go here
 vim.keymap.set("n", "<leader>vd", ":bdelete<CR>", { desc = "kill current buffer" })
-
+vim.keymap.set("n", "<leader>vl", ":Lazy<CR>", { desc = "Lazy" })
+vim.keymap.set("n", "<leader>vu", ":Lazy update<CR>", { desc = "Lazy update" })
+vim.keymap.set("n", "<leader>vm", ":Mason<CR>", { desc = "Mason" })
 -- [W]indow command group
 -- commands for vim window management
 
 vim.keymap.set("n", "<leader>wb", ":split<CR>", { desc = "Horizontal split" })
 vim.keymap.set("n", "<leader>wv", ":vsplit<CR>", { desc = "Vertical split" })
-
 vim.keymap.set("n", "<leader>wf", ":only<CR>", { desc = "Focus on current window" })
 vim.keymap.set("n", "<leader>wh", "<C-w><C-h>", { desc = "Move focus on the left window" })
 vim.keymap.set("n", "<leader>wj", "<C-w><C-j>", { desc = "Move focus on the lower window" })
@@ -763,7 +764,7 @@ require("lazy").setup({
 				clangd = {},
 				-- gopls = {},
 				pyright = {},
-				rust_analyzer = {},
+				-- rust_analyzer = {},
 				ltex = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
